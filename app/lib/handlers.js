@@ -383,7 +383,8 @@ handlers._users.post = function(data, callback) {
             'name': name,
             'mail': mail,
             'address': address,
-            'hashedPassword': hashedpassword
+            'hashedPassword': hashedpassword,
+            'signupDate': Date.now()
           };
 
           // Store the user
