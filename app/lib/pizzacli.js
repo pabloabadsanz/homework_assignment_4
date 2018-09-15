@@ -10,6 +10,7 @@ var debug = util.debuglog('cli');
 var events = require('events');
 class _events extends events{};
 var e = new _events();
+var config = require('../config');
 
 // Instantiate CLI module obejct
 var pizzacli = {};
@@ -137,7 +138,7 @@ pizzacli.responders.exit = function() {
 
 // Show the ingredients in the menu
 pizzacli.responders.menu = function() {
-  console.log("You asked for menu");
+  console.dir(config.menuItemsData, {'colors': true});
 };
 
 // List all the orders in the last "n" hours specified in the passed string, default to 24h
